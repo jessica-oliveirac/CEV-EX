@@ -31,3 +31,21 @@ Private Sub ateUsuario()
     Wend
     MsgBox "Terminei de contar"
 End Sub
+
+4 - Ler 10 números e somá-los
+
+algoritmo "somadorNumerico"
+  var cont: inteiro
+  var soma:inteiro
+
+ inicio
+cont<-0
+soma<-0
+enquanto cont<= 10 faça
+    escreval(cont)
+    cont<-cont+1
+    soma<-soma+cont
+fimenquanto
+
+    escreval("Resultado: ", soma)
+ fimalgoritmo
