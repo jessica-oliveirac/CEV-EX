@@ -61,3 +61,7 @@ fimenquanto
  fimalgoritmo
 
 5- Fazer conversão de moedas 4 vezes
+
+******************
+1) Contagem Inteligente
+2) Melhor aluno da turma
