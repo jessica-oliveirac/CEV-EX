@@ -34,17 +34,21 @@ End Sub
 
 4 - Ler 10 números e somá-los
 
+Adicional: Mostrar qual foi o maior valor digitado
+
 algoritmo "somadorNumerico"
   var cont: inteiro
   var soma:inteiro
+  var num: inteiro
 
  inicio
-cont<-0
+cont<-1
 soma<-0
-enquanto cont<= 10 faça
-    escreval(cont)
+enquanto cont<= 5 faça
+    escreval("N° ")
+           leia(num)
     cont<-cont+1
-    soma<-soma+cont
+    soma<-soma+num
 fimenquanto
 
     escreval("Resultado: ", soma)
