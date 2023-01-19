@@ -45,18 +45,19 @@ algoritmo "somadorNumerico"
  inicio
 cont<-1
 soma<-0
-numAnterior<-0
+maior<-0
 
 enquanto cont<= 5 faça
     escreval("N°: ")
            leia(num)
     cont<-cont+1
     soma<-soma+num
-    se(num>numAnterior) então 
+    se(num>maior) então 
         maior<-num
-        numAnterior<- num
     fimse
 fimenquanto
     escreval("Número maior: ", maior)
     escreval("Resultado: ", soma)
  fimalgoritmo
+
+5- Fazer conversão de moedas 4 vezes
