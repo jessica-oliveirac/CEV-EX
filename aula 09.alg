@@ -40,16 +40,23 @@ algoritmo "somadorNumerico"
   var cont: inteiro
   var soma:inteiro
   var num: inteiro
-
+  var maior: inteiro
+  var numAnterior: inteiro
  inicio
 cont<-1
 soma<-0
+numAnterior<-0
+
 enquanto cont<= 5 faça
-    escreval("N° ")
+    escreval("N°: ")
            leia(num)
     cont<-cont+1
     soma<-soma+num
+    se(num>numAnterior) então 
+        maior<-num
+        numAnterior<- num
+    fimse
 fimenquanto
-
+    escreval("Número maior: ", maior)
     escreval("Resultado: ", soma)
  fimalgoritmo
