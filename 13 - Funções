@@ -1,0 +1,91 @@
+Procedimentos: os resultados são mostrados na tela de forma padronizada
+Funções: retorna um resultado e podemos tratá-lo da maneira que quisermos. Permitem que sejam tratados diretamente no programa principal
+
+1 - Somar 2 valores
+Algoritmo "SomaFuncao"
+Var
+  V1, V2, S:inteiro
+
+Funcao Soma(X, Y: Inteiro): Inteiro
+Inicio
+  Retorne X + Y
+FimFuncao
+Inicio
+   Escreva("Digite o primeiro valor: ")
+   Leia(V1)
+   Escreva("Digite o segundo valor: ")
+   Leia(V2)
+   S<-Soma(V1, V2)
+   Escreval("A soma entre ", V1, " e ", V2, " é igual a ", S)
+Fimalgoritmo
+======================================================================
+2 - Verificador Par/ímpar
+Algoritmo "semnome"
+Var
+  N: Inteiro
+  R: Caractere
+
+Funcao ParOuImpar(V: Inteiro): Caractere
+Inicio
+   Se ( V%2 = 0) entao
+      Retorne "PAR"
+   Senao
+        Retorne "IMPAR"
+   FimSe
+FimFuncao
+======================================================================
+
+Inicio
+   Escreva("Digite um número: ")
+   Leia(N)
+   R<-ParOuImpar(N)
+   Escreva("O número ", N, " é um valor ", R)
+Fimalgoritmo
+
+3 - Fatorial de um número
+Algoritmo "semnome"
+Var
+  N, F: Inteiro
+
+Funcao Fatorial(V: Inteiro) : Inteiro
+Var C, R: Inteiro
+Inicio
+   R<-1
+   Para C <-1 ate V faca
+       R <- R*C
+   FimPara
+   Retorne R
+FimFuncao
+
+Inicio
+   Escreva("Digite um número: ")
+   Leia(N)
+   F <- Fatorial(N)
+   EscrevaL("O valor de ", N, "! é igual a ", F)
+Fimalgoritmo
+******************************************************************************
+Algoritmo "Fibonacci"
+Var
+  cont, T1,T2, T3: Inteiro
+Funcao ProximoFibonacci( var A, B: Inteiro): Inteiro
+var
+  C: Inteiro
+Inicio
+       C <- A + B
+
+       A <- B
+       B <- C
+       Retorne C
+FimFuncao
+Inicio
+  T1<-0
+  Escreva (T1)
+  T2<-1
+  Escreva (T2)
+  Para cont<-3 ate 10 faca
+    T3<- ProximoFibonacci(T1,T2)
+    Escreva(T3)
+  FimPara
+Fimalgoritmo
+******************************************************************************
+05 - ANALISADOR DE NOMES
