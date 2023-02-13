@@ -91,4 +91,85 @@ Inicio
 Fimalgoritmo
 =================================================================
 3 - Só importa quem começa com "c"
+
+Algoritmo "SocomC"
+Var
+  nome: Caractere
+  soC: vetor[1..10] de Caractere
+  c, tot: Inteiro
+Inicio
+   Para c <- 1 ate 10 faca
+        Escreva("Digite seu nome: ")
+        Leia(nome)
+        Se(copia(maiusc(nome), 1, 1) = "C") entao
+            tot <- tot+1
+            soC[tot] <- nome
+        FimSe
+   FimPara
+   
+   LimpaTela
+   EscrevaL("LISTAGEM FINAL")
+   Para c <- 1 ate tot faca
+     Escreval(soC[c])
+   FimPara
+Fimalgoritmo
 =================================================================
+4 - Ordenação do Vetor      5-9-0-6
+
+Algoritmo "OrdenaVetor"
+//5-9-0-6
+//1-2-3-4
+Var
+  vet: vetor[1..4] de Inteiro
+  i, j, aux: inteiro
+Inicio
+   Para i<- 1 ate 4 faca
+      Escreva("Digite um valor: ")
+      Leia(vet[i])
+   FimPara
+   
+   Para i <- 1 ate 3 faca
+        para j <-i+1 ate 4 faca
+             Se(vet[i]>vet[j]) entao
+                aux <- vet[i]
+                vet[i] <- vet[j]
+                vet[j] <- aux
+             FimSe
+        FimPara
+   FimPara
+   
+   Para i <-1 ate 4 faca
+        Escreva("(", vet[i], " )")
+   FimPara
+Fimalgoritmo
+******* 
+Algoritmo "OrdenaVetor"
+//5-2-1-3-8-3-9-8-4-7
+//1-2-3-4-5-6-7-8-9-10
+Var
+  vet: vetor[1..10] de Inteiro
+  i, j, aux: inteiro
+Inicio
+   Para i<- 1 ate 10 faca
+      Escreva("Digite um valor: ")
+      Leia(vet[i])
+   FimPara
+   
+   Para i <- 1 ate 9 faca
+        para j <-i+1 ate 10 faca
+             Se(vet[i]>vet[j]) entao
+                aux <- vet[i]
+                vet[i] <- vet[j]
+                vet[j] <- aux
+             FimSe
+        FimPara
+   FimPara
+   
+   Para i <-1 ate 10 faca
+        Escreva("(", vet[i], " )")
+   FimPara
+Fimalgoritmo
+*******************************************************************************************************************
+EX1 - Torneio de futebol
+EX2 - Corrigindo Provas
+EX3 - Reservar espaço no cinema
