@@ -172,4 +172,54 @@ Fimalgoritmo
 *******************************************************************************************************************
 EX1 - Torneio de futebol
 EX2 - Corrigindo Provas
+Algoritmo "CorrigindoProvas"
+//a-b-c-d-a
+//Gustavo:a-a-a-a-a
+//Maria:a-b-c-d-c
+//Paulo:d-d-a-c-d
+Var
+   vett:vetor[1..5] de Inteiro
+  vet: vetor[1..3] de Inteiro
+  n: vetor[1..5] de inteiro
+  nome:vetor[1..3] de caractere
+  nota: vetor[1..3] de inteiro
+  i: inteiro
+Inicio
+   Escreval("PASSO 1 - Cadastro de Gabarito")
+   Escreval("-------------------------------")
+   Para i<-1 ate 5 faca
+        Escreva("Questão ", i,": ")
+        Leia(vett[i])
+   FimPara
+   Para i<-1 ate 3 faca
+        Escreval("----------")
+        Escreval("ALUNO ",i)
+        Escreval("----------")
+        Escreva("Nome: ")
+        Leia(nome[i])
+        Escreval("RESPOSTAS DADAS")
+            Para i<-1 ate 5 faca
+                 Escreva("Questão ", i,": ")
+                 Leia(n[i])
+                  Se (n[i]=vett[i]) entao
+                     nota[i]<-nota[i]+1
+                  FimSe
+            FimPara
+        FimPara
+   
+   Para i<-1 ate  3 faca
+        Escreval("NOTAS FINAIS")
+        Escreval("-------------")
+            Para i<-1 ate 3 faca
+                 Escreva(nome[i],"  ",nota[i])
+                 soma=soma+nota
+            FimPara
+        Escreval("-------------")
+   FimPara
+          media=nota/i
+          Escreval("Media da turma: ", media)
+Fimalgoritmo
+
+******************************************************
+
 EX3 - Reservar espaço no cinema
