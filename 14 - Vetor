@@ -219,6 +219,74 @@ Inicio
           media=nota/i
           Escreval("Media da turma: ", media)
 Fimalgoritmo
+===============================================================================================================
+Algoritmo "semnome"
+//a-b-c-d-a
+//Gustavo:a-a-a-a-a-  4.0
+//Maria:a-b-c-d-c    8.0
+//Paulo:d-d-a-c-d     0.0
+//Media da Turma: 4.0
+Var
+  gab: vetor [1..5] de inteiro
+  resp: vetor[1..5] de inteiro
+  nome: vetor[1..3] de caractere
+  nota:vetor[1..5] de real
+  soma, media:real
+    i:inteiro
+
+Procedimento Gabarito()
+var
+ x: inteiro
+inicio
+   Escreval("PASSO 1 - Cadastro de Gabarito")
+  Escreval("------------------------------")
+
+   para x<-1 ate 5 faca
+       escreva("Questão ", x,": ")
+       Leia(gab[x])
+   FimPara
+
+FimProcedimento
+    
+Funcao Prova():real
+var
+ x: inteiro
+ notaFinal: real
+inicio
+  Escreval("RESPOSTAS DADAS")
+  para x<-1 ate 5 faca
+     Escreva("Questão ",x, ": ")
+     Leia(resp[i])
+      Se(resp[i]=gab[x])entao
+          notaFinal<-notaFinal+2
+      FimSe
+  FimPara
+FimFuncao
+
+Inicio
+  Gabarito()
+
+   Para i<-1 ate 3 faca
+        Escreval("----------------------------")
+        Escreval("ALUNO ",i)
+        Escreval("----------------------------")
+        Escreva("Nome:   ")
+        Leia(nome[i])
+        Nota[i]<-Prova[i]
+        Soma<-soma+nota[i]
+   FimPara
+
+   LimpaTela
+   Escreval("NOTAS FINAIS")
+   Escreval("----------------------------")
+          para i<-1 ate 3 faca
+               Escreva(nome[i]:10, nota[i]:4:1)
+          FimPara
+   Escreval("----------------------------")
+     media<-soma/3
+   Escreval("Média da Turma: ", media:4:1)
+
+Fimalgoritmo
 
 ******************************************************
 
