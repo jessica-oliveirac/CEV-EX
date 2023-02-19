@@ -1,1 +1,15 @@
 Variáveis compostas homogêneas multidimesionais
+
+1 - Preencher uma matriz 3x2 com valores via teclado
+-----------------------------------------------------------
+2 - Ler uma matriz 3x3 e mostrar os pares
+------------------------------------------------------------
+3 - Criar a matriz identidade de 3° ordem
+------------------------------------------------------------
+4 - Preencher uma matriz de 4° ordem
+- A soma dos valores da diagonal principal
+- O produto entre os valores da segunda linha
+- O maior valor da terceira coluna
+*********************************************************
+1) Dissecando matrizes
+2) Jogo da velha
