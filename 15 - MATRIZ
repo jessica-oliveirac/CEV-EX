@@ -1,15 +1,238 @@
 Variáveis compostas homogêneas multidimesionais
-
+----------------------------------------------------------------------
 1 - Preencher uma matriz 3x2 com valores via teclado
------------------------------------------------------------
+
+Algoritmo "lerMatriz"
+//5-4-7-8-9-6
+Var
+  mat: vetor[1..3, 1..2] de Inteiro
+  l,c:Inteiro
+Inicio
+    Para l<-1 ate 3 faca
+      Para c<-1 ate 2 faca
+         Escreva("Digite o valor da posição [ ", l,",", c," ]: ")
+         Leia(mat[l,c])
+      FimPara
+    FimPara
+    
+    Para l<-1 ate 3 faca
+      Para c<-1 ate 2 faca
+         Escreva(mat[l,c]:5)
+      FimPara
+        Escreval()
+    FimPara
+Fimalgoritmo
+----------------------------------------------------------------------
 2 - Ler uma matriz 3x3 e mostrar os pares
+
+Algoritmo "matrizPar"
+//10-16-18-5-4-15-20-6-8
+Var
+  valores: vetor[1..3,1..3] de Inteiro
+  l,c, TotPar: Inteiro
+Inicio
+  Para l<-1 ate 3 faca
+       Para c<-1 ate 3 faca
+            Escreva("Posição [ ",l," , ", c," ]:")
+            Leia(valores[l,c])
+       FimPara
+  FimPara
+
+  Escreval()
+  Escreval("MATRIZ")
+  Escreval("------------")
+  TotPar<-0
+  Para l<-1 ate 3 faca
+       Para c<-1 ate 3 faca
+          Se(valores[l,c] % 2 = 0) entao
+            Escreva(" { ",valores[l,c]:2, " } ")
+            TotPar<-TotPar+1
+          Senao
+            Escreva(valores[l,c]:4)
+          FimSe
+       FimPara
+       Escreval()
+  FimPara
+     Escreval("Total de valores PARES: ", TotPar)
+Fimalgoritmo
 ------------------------------------------------------------
 3 - Criar a matriz identidade de 3° ordem
+
+Algoritmo "matrizIdentidade"
+Var
+  matrizId: vetor[1..3,1..3] de Inteiro
+  i,j: Inteiro
+Inicio
+  Para i<-1 ate 3 faca
+       Para j<-1 ate 3 faca
+             Se(i=j)entao
+                matrizId[i,j]<-1
+             Senao
+                matrizId[i,j]<-0
+             FimSe
+       FimPara
+  FimPara
+  
+  Para i<-1 ate 3 faca
+       Para j<-1 ate 3 faca
+            Escreva(matrizId[i,j])
+       FimPara
+         Escreval()
+  FimPara
+Fimalgoritmo
 ------------------------------------------------------------
 4 - Preencher uma matriz de 4° ordem
 - A soma dos valores da diagonal principal
 - O produto entre os valores da segunda linha
 - O maior valor da terceira coluna
-*********************************************************
+
+Algoritmo "valoreMatriz"
+Var
+  m: vetor[1..4,1..4] de Inteiro
+  l,c, sDP, P2L, maior3C: Inteiro
+Inicio
+   sDP<-0
+   P2L<-1
+   Para l<-1 ate 4 faca
+        Para c<-1 ate 4 faca
+             Escreva("Posição { ",l," , ",c," }: ")
+             Leia(m[l,c])
+
+             Se(l=c) entao
+                sDP<-sDP+m[l,c]
+             FimSe
+        FimPara
+   FimPara
+   
+   Para l<-1 ate 4  faca
+        Para c<-1 ate 4  faca
+             Escreva(m[l,c])
+        FimPara
+        Escreval()
+   FimPara
+   
+   Para c<-1 ate 4 faca
+        P2L<-P2L * m[2,c]
+   FimPara
+   
+   Para l<-1 ate 4 faca
+        Se(m[l,3]>maior3C) entao
+            maior3C<-m[l,3]
+        FimSe
+   FimPara
+   
+   Escreval("Soma da DIAGONAL PRINCIPAL: ", sDP)
+   Escreval("Produto entre os valores da 2º linha: ", P2L)
+   Escreval("Maior valor da 3ª coluna: ", maior3C)
+Fimalgoritmo
+*************************************************************
 1) Dissecando matrizes
+algoritmo "dissecandoMatrizes"
+// =============================================================
+// Algoritmo para preencher uma matriz de quarta ordem e mostrar:
+// - Os elementos da diagonal principal
+// - Os elementos do triangulo superior
+// - Os elementos do triangulo inferior
+// - A matriz completa
+//
+// AUTOR: Gustavo Guanabara
+// Curso COMPLETO disponivel GRATIS no site www.cursoemvideo.com
+// =============================================================
+var
+  m: vetor[1..4, 1..4] de Inteiro
+  l, c, op: Inteiro
+  
+Procedimento MostraMatriz()
+inicio
+   Para l <- 1 ate 4 faca
+      Para c <- 1 ate 4 faca
+         Escreva(m[l,c]:4)
+      FimPara
+      EscrevaL()
+   FimPara
+FimProcedimento
+
+Procedimento DiagonalPrincipal()
+var t: inteiro
+inicio
+   Para l <- 1 ate 4 faca
+      EscrevaL(m[l,l]:4)
+      Para t <- 1 ate l faca
+         Escreva("    ")
+      FimPara
+   FimPara
+FimProcedimento
+
+Procedimento TrianguloSuperior()
+var t: Inteiro
+inicio
+   Para l <- 1 ate 3 faca
+      Escreva("    ")
+      Para c <- l+1 ate 4 faca
+         Escreva(m[l,c]:4)
+      FimPara
+      EscrevaL()
+      Para t <- 1 ate l faca
+         Escreva("    ")
+      FimPara
+   FimPara
+   EscrevaL()
+FimProcedimento
+
+Procedimento TrianguloInferior()
+inicio
+   Para l <- 2 ate 4 faca
+      EscrevaL()
+      Para c <- 1 ate l-1 faca
+         Escreva(m[l,c]:4)
+      FimPara
+   FimPara
+   EscrevaL()
+FimProcedimento
+
+inicio
+   Para l <- 1 ate 4 faca
+      Para c <- 1 ate 4 faca
+          Escreva("Digite valor para a posicao [", l, ",", c, "]: ")
+          Leia(m[l,c])
+      FimPara
+   FimPara
+   LimpaTela
+   Repita
+      EscrevaL()
+      EscrevaL("MENU DE OPCOES")
+      EscrevaL("====================")
+      EscrevaL("[1] Mostrar a Matriz")
+      EscrevaL("[2] Diagonal Principal")
+      EscrevaL("[3] Triangulo Superior")
+      EscrevaL("[4] Triangulo Inferior")
+      EscrevaL("[5] Sair")
+      Repita
+         EscrevaL("===== OPCAO: ")
+         Leia(op)
+      Ate (op >=1) e (op <=5)
+      LimpaTela
+      Escolha op
+         Caso 1
+            MostraMatriz()
+         Caso 2
+            DiagonalPrincipal()
+         Caso 3
+            TrianguloSuperior()
+         Caso 4
+            TrianguloInferior()
+         Caso 5
+            EscrevaL("ENCERRANDO...")
+      FimEscolha
+   Ate (op = 5)
+fimalgoritmo
+-------------------------------------------------------------------------------------------------------
+
 2) Jogo da velha
+
+
+
+
+
+-média dos valores de toda matriz
+- qual dos valores da quarta linha utiliza a média
